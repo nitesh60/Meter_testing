@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<!-- display all data -->
+    <h1 class="title">{% block title %} Meter {% endblock %}</h1>
+    <div class="content">
+        {% for student in json_file %}
+            {% if student.meter_id == id %}
+            <div class="student">
+                <p><b>#{{ student.id }}</b></p>
+                <b>
+                    <p class="name">{{ student.meter_id }}</p>
+                </b>
+                <p>{{ student.timestamp }} Established Date.</p>
+                <p>Value: {{ student.value }}</p>               
+            </div>
+            {% endif  %}
+        {% endfor %}
+    </div>
+{% endblock %}
